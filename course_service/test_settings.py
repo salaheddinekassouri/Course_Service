@@ -8,12 +8,11 @@ DEBUG = False
 
 # --- DATABASE: Use PostgreSQL for tests ---
 # Django will create the test database automatically if permissions allow.
-POSTGRES_HOST = os.environ.get("POSTGRES_HOST", "localhost")
+POSTGRES_HOST = os.environ.get("POSTGRES_HOST", "dpg-d4j3t2idbo4c73bc9mq0-a")
 POSTGRES_PORT = os.environ.get("POSTGRES_PORT", "5432")
-POSTGRES_USER = os.environ.get("POSTGRES_USER", "postgres")
-POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD", "postgres")
-POSTGRES_DB = os.environ.get("POSTGRES_DB", "coursedb")
-
+POSTGRES_USER = os.environ.get("POSTGRES_USER", "coursedb_tfpi_user")
+POSTGRES_PASSWORD = os.environ.get("POSTGRES_PASSWORD", "DQ74OcBEtq0yXF91ZD1icwkyHGru8WOv")
+POSTGRES_DB = os.environ.get("POSTGRES_DB", "coursedb_tfpi")
 DATABASES = {
     "default": {
         "ENGINE": "django.db.backends.postgresql",
