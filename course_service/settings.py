@@ -1,5 +1,8 @@
 from pathlib import Path
 import os
+import dj_database_url
+
+
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -69,14 +72,16 @@ WSGI_APPLICATION = 'course_service.wsgi.application'
 # DATABASE: PostgreSQL
 # -----------------------------------
 
+
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'coursedb_tfpi',     # from Render: Database
-        'USER': 'coursedb_tfpi_user',             # from Render: Username
-        'PASSWORD': 'DQ74OcBEtq0yXF91ZD1icwkyHGru8WOv',     # from Render: Password
-        'HOST': 'dpg-d4j3t2idbo4c73bc9mq0-a',         # from Render: Hostname
-        'PORT': '5432',                  # default Postgres port
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PASSWORD'),
+        'HOST': os.environ.get('DB_HOST'),
+        'PORT': os.environ.get('DB_PORT', '5432'),
     }
 }
 

@@ -20,4 +20,7 @@ COPY . .
 EXPOSE 8000
 
 # Step 6: Run migrations + server
-CMD ["bash", "-c", "python manage.py migrate && gunicorn course_service.wsgi:application --bind 0.0.0.0:$PORT"]
+COPY entrypoint.sh .
+RUN chmod +x entrypoint.sh
+CMD ["./entrypoint.sh"]
+

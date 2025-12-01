@@ -19,7 +19,7 @@ class CourseViewSet(viewsets.ModelViewSet):
             return Response({'error': 'student_id is required'}, status=status.HTTP_400_BAD_REQUEST)
 
         # ✅ Verify student exists in Spring Boot microservice
-        spring_url = f"http://localhost:8081/api/students/{student_id}"
+        spring_url = f"http://localhost:8084/api/students/{student_id}"
         try:
             response = requests.get(spring_url, timeout=3)
         except requests.exceptions.RequestException:
